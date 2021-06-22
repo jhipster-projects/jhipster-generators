@@ -30,7 +30,7 @@ RUN \
 
 RUN \
   # install the blueprint
-  npm install -g generator-jhipster && \
+  npm install -g generator-jhipster@5.8.2 && \
   # fix jhipster user permissions
   chown -R jhipster:jhipster \
     /home/jhipster \
