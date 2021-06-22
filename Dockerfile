@@ -30,7 +30,7 @@ RUN \
 
 RUN \
   # install the blueprint
-  npm install -g generator-jhipster && \
+  npm install -g generator-jhipster@0.18.1 && \
   # fix jhipster user permissions
   chown -R jhipster:jhipster \
     /home/jhipster \
@@ -47,4 +47,4 @@ USER jhipster
 ENV PATH $PATH:/usr/bin
 WORKDIR "/home/jhipster/app"
 VOLUME ["/home/jhipster/app"]
-CMD jhipster
+CMD ["yo","jhipster"]
