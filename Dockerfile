@@ -3,7 +3,7 @@ FROM ubuntu:24.04
 ENV DEBIAN_FRONTEND=noninteractive \
     TZ=Etc/UTC \
     NODE_VERSION=22.11.0 \
-    JHIPSTER_VERSION=latest
+    JHIPSTER_VERSION=8.11.0
 
 RUN \
   # configure the "jhipster" user
