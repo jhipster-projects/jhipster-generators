@@ -2,8 +2,8 @@ FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive \
     TZ=Etc/UTC \
-    NODE_VERSION=22.11.0 \
-    JHIPSTER_VERSION=latest
+    NODE_VERSION=20.17.0 \
+    JHIPSTER_VERSION=7.9.4
 
 RUN \
   # configure the "jhipster" user
@@ -30,11 +30,11 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 RUN \
-  # install Node.js LTS via official archive
+  # install Node.js LTS compatible with JHipster 7
   wget --no-check-certificate https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz -O /tmp/node.tar.xz && \
   tar -C /usr/local --strip-components 1 -xJf /tmp/node.tar.xz && \
   rm /tmp/node.tar.xz && \
-  npm install -g npm && \
+  npm install -g npm@9 && \
   npm install -g yo && \
   npm cache clean --force
 
